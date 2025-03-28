@@ -10,6 +10,8 @@ public class ContainerShip(int id, float _maxSpeed, int maxContainers, int maxWe
     {
         if (_containers.Count < maxContainers && container.FreightMass + _containers.Sum(c => c.FreightMass) <= maxWeight)
             _containers.Add(container);
+        else 
+            Console.WriteLine("Container ship is full");
     }
     
     public void LoadContainers(List<Container> containers)

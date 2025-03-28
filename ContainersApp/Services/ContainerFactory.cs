@@ -6,9 +6,9 @@ namespace ConsoleApp2.Services;
 
 public class ContainerFactory : IContainerFactory
 {
-    private readonly SerialNumberGenerator _numberGenerator;
+    private readonly ISerialNumberGenerator _numberGenerator;
 
-    public ContainerFactory(SerialNumberGenerator numberGenerator)
+    public ContainerFactory(ISerialNumberGenerator numberGenerator)
     {
         _numberGenerator = numberGenerator;
     }

@@ -6,14 +6,14 @@ using ConsoleApp2.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 var services = new ServiceCollection();
-
+var containers = new List<Container>();
+services.AddSingleton(containers);
 services.AddSingleton<ISerialNumberGenerator, SerialNumberGenerator>();
 services.AddSingleton<IContainerFactory, ContainerFactory>();
 
 var serviceProvider = services.BuildServiceProvider();
 
 var containerFactory = serviceProvider.GetRequiredService<IContainerFactory>();
-var containers = new List<Container>();
 var containerShips = new List<ContainerShip>();
 var numberGenerator = new SerialNumberGenerator(containers);
        
