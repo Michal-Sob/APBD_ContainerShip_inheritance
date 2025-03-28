@@ -141,16 +141,10 @@ try
     
     // 11. Próba przepełnienia kontenera (obsługa wyjątku)
     Console.WriteLine("\n11. Próba przepełnienia kontenera (obsługa wyjątku):");
-    try
-    {
-        // Ta operacja powinna zgłosić błąd, ponieważ niebezpieczny kontener
-        // może być wypełniony tylko do 50% pojemności (3500kg)
-        liquidContainer.AddFreight(5000);
-    }
-    catch (Exception ex) // Change to your specific OverfillException if it exists
-    {
-        Console.WriteLine($"Złapano wyjątek: {ex.Message}");
-    }
+    
+    // Ta operacja powinna zgłosić błąd, ponieważ niebezpieczny kontener
+    // może być wypełniony tylko do 50% pojemności (3500kg)
+    liquidContainer.AddFreight(5000);
     
     // 12. Próba załadowania zbyt wielu kontenerów na statek
     Console.WriteLine("\n12. Próba załadowania zbyt wielu kontenerów na statek:");
